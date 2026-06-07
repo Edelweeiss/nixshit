@@ -7,6 +7,11 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.packageOverrides = pkgs: {
+	  openldap = pkgs.openldap.overrideAttrs (old: {
+		doCheck = false;
+	  });
+	};
 
     hardware.bluetooth.enable = true;
     hardware.bluetooth.powerOnBoot = true;
@@ -98,6 +103,9 @@
 	  unzip
 	  ripgrep
 	  gh
+	  adwaita-icon-theme
+	  lutris
+	  qbittorrent
     ];
 
     services.xserver.videoDrivers = [ "nvidia" ];
