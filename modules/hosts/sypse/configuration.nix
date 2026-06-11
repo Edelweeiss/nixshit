@@ -29,6 +29,7 @@
 	  extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 	  config.common.default = "*";
 	};
+	services.openssh.enable = true;
 
 	programs.steam = {
 		enable = true;
@@ -106,6 +107,8 @@
 	  adwaita-icon-theme
 	  lutris
 	  qbittorrent
+	  gparted
+	  ventoy
     ];
 
     services.xserver.videoDrivers = [ "nvidia" ];
